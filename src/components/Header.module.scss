@@ -1,0 +1,39 @@
+@import '../styles/variables';
+
+.header {
+	&__nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: $paddin-msg;
+	}
+
+	&__nav ul {
+		display: flex;
+		text-transform: uppercase;
+		gap: 0.9em;
+	}
+
+	&__nav li {
+		color: $primary-clr;
+		font-size: 12px;
+	}
+
+	&__nav img {
+		max-width: 145px;
+	}
+
+	&__nav a {
+		text-decoration: none;
+		color: $primary-clr;
+	}
+
+	&__nav a:active {
+		text-decoration: underline;
+	}
+
+	.active {
+		text-decoration: underline;
+		padding-bottom: 2px;
+	}
+}

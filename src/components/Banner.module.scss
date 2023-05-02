@@ -1,0 +1,36 @@
+@import '../styles/variables';
+
+.banner {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	overflow: hidden;
+	align-items: center;
+	border-radius: $border-rd;
+	margin-right: 20px;
+	margin-left: 20px;
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: black;
+		mix-blend-mode: darken;
+		opacity: 33%;
+	}
+
+	&__title {
+		position: absolute;
+		color: white;
+		font-size: 24px;
+		font-weight: normal;
+		max-width: 223px;
+		left: 1em;
+		z-index: 1;
+	}
+	img {
+		min-width: 710px;
+	}
+}
