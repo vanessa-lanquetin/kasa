@@ -1,8 +1,6 @@
 @import '~normalize.css/normalize.css';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-
-
 body {
 	font-family: 'Montserrat', sans-serif;
 }
@@ -16,4 +14,9 @@ li {
 	list-style-type: none;
 }
 
-
+.container_general {
+	max-width: 1240px;
+	margin: auto;
+	position: relative;
+	min-height: 72vh;
+}

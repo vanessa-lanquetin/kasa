@@ -1,4 +1,5 @@
 @import '../styles/variables';
+@import '../styles/mixins';
 
 .banner {
 	display: flex;
@@ -7,9 +8,14 @@
 	overflow: hidden;
 	align-items: center;
 	border-radius: $border-rd;
-	margin-right: 20px;
-	margin-left: 20px;
 	position: relative;
+	max-height: 111px;
+	margin-left: 20px;
+	margin-right: 20px;
+
+	@include responsive(768px) {
+		max-height: 223px;
+	}
 
 	&:before {
 		content: '';
@@ -29,6 +35,15 @@
 		max-width: 223px;
 		left: 1em;
 		z-index: 1;
+		@include responsive(768px) {
+			font-size: 48px;
+			max-width: 100%;
+			font-size: 48px;
+			text-align: center;
+			left: 50%;
+			width: 100%;
+			transform: translateX(-50%);
+		}
 	}
 	img {
 		min-width: 710px;

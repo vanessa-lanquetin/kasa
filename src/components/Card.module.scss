@@ -1,0 +1,23 @@
+@import '../styles/_variables.scss';
+
+.card {
+	background-color: $primary-clr;
+	width: 335px;
+	height: 335px;
+	border-radius: $border-rd;
+	position: relative;
+
+	&::after {
+		content: '';
+		width: 100%;
+		position: absolute;
+		height: 100%;
+		background: linear-gradient(
+			180deg,
+			rgba(255, 255, 255, 0) 0%,
+			rgba(0, 0, 0, 0.5) 100%
+		);
+		left: 0;
+		top: 0;
+	}
+}

@@ -10,7 +10,7 @@ const Header = (props) => {
 				<img src={logo} alt="logo Kasa" />
 				<ul>
 					<li>
-						<NavLink to="/">HOME</NavLink>
+						<NavLink to="/">Home</NavLink>
 					</li>
 					<li>
 						<NavLink to="/about">A Propos</NavLink>

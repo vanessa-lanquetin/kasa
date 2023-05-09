@@ -19,7 +19,7 @@ import Footer from './components/Footer'
 // USE LAYOUT AS A FC function to return the HTML for the page to be rendered in
 const Layout = () => {
 	return (
-		<div>
+		<div className="container_general">
 			<Header />
 			<main>
 				<Outlet />
