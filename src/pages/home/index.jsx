@@ -9,7 +9,6 @@ const index = () => {
 		<div className={styles.container}>
 			<Banner imageUrl={imgBanner} title="Chez vous, partout et ailleurs" />
 			<div className={styles.card_container}>
-				<h2>ici</h2>
 				{mockData.map((logement, indx) => (
 					<Card
 						imageUrl={logement.cover}

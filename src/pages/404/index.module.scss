@@ -1,0 +1,26 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.container {
+	color: $primary-clr;
+	text-align: center;
+	padding-bottom: 2em;
+
+	h2 {
+		font-size: 96px;
+		font-weight: bold;
+		margin-block-end: 11px;
+		margin-top: 195px;
+	}
+
+	p {
+		font-size: 18px;
+		max-width: 260px;
+		margin: 0 auto 133px auto;
+	}
+
+	a {
+		color: inherit;
+		font-size: 14px;
+	}
+}
