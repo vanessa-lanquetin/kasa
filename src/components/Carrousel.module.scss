@@ -1,0 +1,18 @@
+.carrouselCont {
+	position: relative;
+	display: flex;
+	align-items: center;
+
+	img {
+		min-height: 255px;
+		object-fit: cover;
+	}
+
+	.btn {
+		position: absolute;
+	}
+
+	.btn:last-child {
+		right: 0;
+	}
+}
