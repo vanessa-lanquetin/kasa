@@ -7,14 +7,22 @@ const Carrousel = ({ pictures }) => {
 	let [imgIndx, setImgIndx] = useState(0)
 
 	const handleClick = (direction) => {
-		console.log('running')
 		if (direction === 'right') {
-			setImgIndx(imgIndx++)
-		} else {
-			setImgIndx(imgIndx--)
+			if (pictures.length - 1 > imgIndx) {
+				setImgIndx((imgIndx) => imgIndx + 1)
+			} else {
+				setImgIndx(0)
+			}
+		}
+		if (direction === 'left') {
+			if (imgIndx === 0) {
+				setImgIndx(pictures.length - 1)
+			} else {
+				setImgIndx((imgIndx) => imgIndx - 1)
+			}
 		}
 	}
-	console.log(pictures)
+	// console.log(pictures)
 	return (
 		<div className={styles.carrouselCont}>
 			<button className={styles.btn} onClick={() => handleClick('left')}>

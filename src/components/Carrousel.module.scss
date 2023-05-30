@@ -1,18 +1,47 @@
+@import '../styles/mixins';
+@import '../styles/variables';
+
 .carrouselCont {
 	position: relative;
 	display: flex;
 	align-items: center;
+	padding-left: $paddin-msg;
+	padding-right: $paddin-msg;
 
 	img {
-		min-height: 255px;
+		height: 255px;
 		object-fit: cover;
+		border-radius: $border-rd;
+
+		@include responsive(768px) {
+			height: 415px;
+			border-radius: 25px;
+		}
 	}
 
 	.btn {
 		position: absolute;
+		cursor: pointer;
+		background-color: transparent;
+		border: none;
+		@include responsive(768px) {
+			transform: scale(4);
+			left: 4.1%;
+		}
+		div {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
 	}
 
 	.btn:last-child {
-		right: 0;
+		right: $paddin-msg;
+		left: auto;
+		transform: scale(-1);
+		@include responsive(768px) {
+			transform: scale(-4);
+			right: 4.1%;
+		}
 	}
 }

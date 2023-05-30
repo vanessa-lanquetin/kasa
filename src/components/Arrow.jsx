@@ -1,7 +1,7 @@
 const Arrow = ({ clr }) => {
 
 	return (
-		<div >
+		<div>
 			<svg
 				width="13"
 				height="20"
