@@ -1,0 +1,13 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.tag {
+	color: white;
+	background-color: $primary-clr;
+	border-radius: 5px;
+	margin-left: $paddin-msg;
+	font-size: 10px;
+	line-height: 14.5px;
+	padding: 2px 30px;
+	width: fit-content;
+}

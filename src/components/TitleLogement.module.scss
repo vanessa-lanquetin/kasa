@@ -1,0 +1,25 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.title {
+	font-weight: 500;
+	font-size: 18px;
+	color: $primary-clr;
+	padding-left: $paddin-msg;
+	margin-bottom: 5px;
+
+	@include responsive(768px) {
+		font-size: 36px;
+	}
+}
+
+.location {
+	margin-top: 0;
+	color: $primary-clr;
+	padding-left: $paddin-msg;
+	font-size: 14px;
+
+	@include responsive(768px) {
+		font-size: 18px;
+	}
+}
