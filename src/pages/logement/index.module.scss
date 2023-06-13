@@ -1,0 +1,20 @@
+.appart_container {
+	display: flex;
+	flex-direction: column;
+
+	.host_container {
+		background-color: grey;
+		display: flex;
+		align-items: center;
+		max-width: 135px;
+
+		h3 {
+			font-size: 12px;
+		}
+
+		img {
+			border-radius: 50%;
+			width: 32px;
+		}
+	}
+}

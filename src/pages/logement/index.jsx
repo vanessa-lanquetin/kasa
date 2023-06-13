@@ -3,18 +3,36 @@ import logements from '../../data/mockData.json'
 import Carrousel from '../../components/Carrousel'
 import TitleLogement from '../../components/TitleLogement'
 import Tag from '../../components/Tag'
+import { FaStar } from 'react-icons/fa'
+import styles from './index.module.scss'
 
 const Logement = () => {
 	const params = useParams()
 	const parmId = params.id
 
 	const appart = logements.find((app) => app.id === parmId)
-	// console.log(appart)
+	console.log(appart)
 
-	const renderTags = () => {
-		return appart.tags.map((tag) => {
-			return <Tag text={tag} />
+	const RenderTags = () => {
+		return appart.tags.map((tag, indx) => {
+			return <Tag text={tag} key={indx} />
 		})
+	}
+
+	const RenderStars = () => {
+		const stars = [1, 2, 3, 4, 5]
+
+		return (
+			<div>
+				{stars.map((star, indx) => {
+					if (star <= Number(appart.rating)) {
+						return <FaStar key={indx} style={{ color: '#FF6060' }} />
+					} else {
+						return <FaStar key={indx} style={{ color: '#E3E3E3' }} />
+					}
+				})}
+			</div>
+		)
 	}
 
 	/*   error handling  */
@@ -23,13 +41,26 @@ const Logement = () => {
 	) : (
 		<div>
 			<Carrousel pictures={appart.pictures} />
-			<TitleLogement
-				titleData={{
-					title: appart.title,
-					location: appart.location,
-				}}
-			/>
-			<div style={{ display: 'flex' }}>{renderTags()}</div>
+			<div className={styles.appart_container}>
+				<TitleLogement
+					titleData={{
+						title: appart.title,
+						location: appart.location,
+					}}
+				/>
+				<div>
+					<div style={{ display: 'flex' }}>
+						<RenderTags />
+					</div>
+					<div>
+						<RenderStars />
+						<div className={styles.host_container}>
+							<h3>{appart.host.name} </h3>
+							<img src={appart.host.picture} alt={appart.host.name} />
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	)
 }
