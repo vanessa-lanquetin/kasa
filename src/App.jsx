@@ -1,9 +1,9 @@
 import {
-	createBrowserRouter,
 	createRoutesFromElements,
 	RouterProvider,
 	Route,
 	Outlet,
+	createBrowserRouter,
 } from 'react-router-dom'
 import React from "react";
 // Pages
@@ -33,12 +33,13 @@ const Layout = () => {
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path="/" element={<Layout />}>
-			<Route index element={<Home />} />
+			<Route index element={<Home />}/>
 			<Route path="about" element={<About />} />
 			<Route path="logement/:id" element={<Logement />} />
 			<Route path="*" element={<NotFound />} />
 		</Route>
-	)
+	),
+	{basename: '/kasa'}
 )
 
 const App = () => {

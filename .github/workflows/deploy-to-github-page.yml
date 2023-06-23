@@ -1,0 +1,35 @@
+name: 'Build a Deploy to GitHub Pages'
+
+on:
+  push:
+    tags:
+      '*'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: "Checkout"
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: 'https://npm.pkg.github.com/'
+          cache: 'npm'
+      - name: Install
+        run : npm ci
+      - name: Build
+        run : npm run build
+      - name: Redirect on 404
+        run: cp build/index.html build/404.html
+      - name: Configure Git
+        run : git config user.name github-actions && git config user.email github-actions@github.com
+      - name: Add build sources
+        run : git --work-tree build add --all
+      - name: Commit
+        run : git commit -m "Automatic Build and Deploy run by GitHub Actions"
+      - name: Push to github pages
+        run : git push origin HEAD:gh-pages --force
