@@ -2,24 +2,23 @@
 @import '../styles/mixins';
 
 .title {
-	font-weight: 500;
-	font-size: 18px;
+	font-weight: 400;
+	font-size: 1.4em;
 	color: $primary-clr;
-	padding-left: $paddin-msg;
+	margin: 0;
 	margin-bottom: 5px;
 
 	@include responsive(768px) {
-		font-size: 36px;
+		font-size: 2em;
 	}
 }
 
 .location {
 	margin-top: 0;
 	color: $primary-clr;
-	padding-left: $paddin-msg;
-	font-size: 14px;
+	font-size: 0.8em;
 
 	@include responsive(768px) {
-		font-size: 18px;
+		font-size: 0.8em;
 	}
 }

@@ -1,3 +1,4 @@
+import React from 'react'
 import { useParams, Navigate } from 'react-router-dom'
 import logements from '../../data/mockData.json'
 import Carrousel from '../../components/Carrousel'
@@ -14,8 +15,8 @@ const Logement = () => {
 	console.log(appart)
 
 	const RenderTags = () => {
-		return appart.tags.map((tag, indx) => {
-			return <Tag text={tag} key={indx} />
+		return (appart?.tags|| []).map((tag, indx) => {
+			return <Tag text={tag} key={indx}/>
 		})
 	}
 
@@ -23,7 +24,7 @@ const Logement = () => {
 		const stars = [1, 2, 3, 4, 5]
 
 		return (
-			<div>
+			<div className={styles.stars}>
 				{stars.map((star, indx) => {
 					if (star <= Number(appart.rating)) {
 						return <FaStar key={indx} style={{ color: '#FF6060' }} />
@@ -42,22 +43,24 @@ const Logement = () => {
 		<div>
 			<Carrousel pictures={appart.pictures} />
 			<div className={styles.appart_container}>
-				<TitleLogement
-					titleData={{
-						title: appart.title,
-						location: appart.location,
-					}}
-				/>
-				<div>
-					<div style={{ display: 'flex' }}>
+				<div className={styles.header}>
+					<TitleLogement
+						titleData={{
+							title: appart.title,
+							location: appart.location,
+						}}
+					/>
+					<div className={styles.tags}>
 						<RenderTags />
+					</div>
+				</div>
+				<div className={styles['tags-stars-container']}>
+					<div className={styles.host_container}>
+						<h3>{appart.host.name.split(' ').map(t => (<div>{t}</div>))} </h3>
+						<img src={appart.host.picture} alt={appart.host.name} />
 					</div>
 					<div>
 						<RenderStars />
-						<div className={styles.host_container}>
-							<h3>{appart.host.name} </h3>
-							<img src={appart.host.picture} alt={appart.host.name} />
-						</div>
 					</div>
 				</div>
 			</div>

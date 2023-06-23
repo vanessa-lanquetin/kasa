@@ -10,8 +10,6 @@
 	border-radius: $border-rd;
 	position: relative;
 	max-height: 111px;
-	margin-left: 20px;
-	margin-right: 20px;
 
 	@include responsive(768px) {
 		max-height: 223px;

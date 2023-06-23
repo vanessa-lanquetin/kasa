@@ -5,7 +5,7 @@ import {
 	Route,
 	Outlet,
 } from 'react-router-dom'
-
+import React from "react";
 // Pages
 import Home from './pages/home'
 import About from './pages/about'

@@ -1,7 +1,8 @@
 // import PropTypes from 'prop-types'
 import logo from '../assets/logo-kasa.png'
 import styles from './Header.module.scss'
-import { NavLink } from 'react-router-dom'
+import React from "react";
+import { Link } from 'react-router-dom'
 
 const Header = (props) => {
 	return (
@@ -10,10 +11,10 @@ const Header = (props) => {
 				<img src={logo} alt="logo Kasa" />
 				<ul>
 					<li>
-						<NavLink to="/">Home</NavLink>
+						<Link to="/.">Accueil</Link>
 					</li>
 					<li>
-						<NavLink to="/about">A Propos</NavLink>
+						<Link to="/about">A Propos</Link>
 					</li>
 				</ul>
 			</nav>

@@ -4,10 +4,10 @@
 .tag {
 	color: white;
 	background-color: $primary-clr;
-	border-radius: 5px;
-	margin-left: $paddin-msg;
+	border-radius: 100px;
 	font-size: 10px;
+	font-weight: lighter;
 	line-height: 14.5px;
-	padding: 2px 30px;
+	padding: 3px 25px;
 	width: fit-content;
 }

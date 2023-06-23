@@ -1,5 +1,6 @@
+import React from 'react'
 import styles from './TitleLogement.module.scss'
-import { PropTypes } from 'prop-types'
+import PropTypes from 'prop-types'
 
 const TitleLogement = ({ titleData }) => {
 	return (

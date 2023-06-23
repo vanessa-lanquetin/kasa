@@ -15,8 +15,9 @@ li {
 }
 
 .container_general {
+	width: calc(100vw - 40px);
 	max-width: 1240px;
 	margin: auto;
 	position: relative;
-	min-height: 76vh;
+	min-height: calc(100vh - 210px);
 }
