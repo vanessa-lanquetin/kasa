@@ -1,6 +1,10 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
+main{
+	margin-bottom: 50px;
+}
+
 .container {
 	margin: auto;
 	width: 100%;
@@ -13,7 +17,7 @@
 	}
 
 	.card_container {
-		padding-top: 60px;
+		padding: 60px 0;
 		width: 100%;
 		margin: auto;
 		background-color: #f6f6f6;

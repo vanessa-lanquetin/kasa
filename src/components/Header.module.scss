@@ -7,21 +7,29 @@
 		justify-content: space-between;
 		align-items: center;
 		padding: 20px 0;
+		font-size: 0.8em;
+		
+		@include responsive(768px) {
+			font-size: 1.1em;
+		}
 	}
 
 	&__nav ul {
 		display: flex;
 		text-transform: uppercase;
-		gap: 0.9em;
+		gap: 30px;
+		
+    text-align: center;
+		align-items: center;
 
 		@include responsive(768px) {
 			text-transform: none;
+			gap: 50px;
 		}
 	}
 
 	&__nav li {
 		color: $primary-clr;
-		font-size: 12px;
 	}
 
 	&__nav img {

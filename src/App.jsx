@@ -22,7 +22,7 @@ const Layout = () => {
 	return (
 		<div className="container_general">
 			<Header />
-			<main>
+			<main className="main">
 				<Outlet />
 			</main>
 			<Footer />
@@ -45,5 +45,6 @@ const router = createBrowserRouter(
 const App = () => {
 	return <RouterProvider router={router} />
 }
+
 
 export default App

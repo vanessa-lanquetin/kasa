@@ -25,13 +25,21 @@ const Carrousel = ({ pictures }) => {
   };
   return (
     <div className={styles.carrouselCont}>
-      <button className={styles.btn} onClick={() => handleClick("left")}>
-        <Arrow clr="white" />
-      </button>
+      {
+        pictures.length > 1 && (
+          <button className={styles.btn} onClick={() => handleClick("left")}>
+            <Arrow clr="white" />
+          </button>
+        )
+      }
       <img src={pictures[imgIndx]} alt="app" />
-      <button className={styles.btn} onClick={() => handleClick("right")}>
-        <Arrow clr="white" />
-      </button>
+      {
+        pictures.length > 1 && (
+          <button className={styles.btn} onClick={() => handleClick("right")}>
+            <Arrow clr="white" />
+          </button>
+        )
+      }
     </div>
   );
 };

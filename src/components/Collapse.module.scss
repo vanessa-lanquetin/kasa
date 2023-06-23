@@ -4,13 +4,6 @@
   text-align: left;
 }
 
-
-  .chevron{
-    transform: rotate(-180deg);
-    color:red;
-    fill:red;
-    stroke: red;
-  }
 .header_dropdown {
   display: flex;
   justify-content: space-between;
@@ -34,7 +27,6 @@
   display: flex;
   justify-content: flex-end;
   margin-right: 10px;
-  width: 1000px;
 }
 .fleche_dropdown:hover {
   cursor: pointer;
