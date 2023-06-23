@@ -11,11 +11,11 @@ const TitleLogement = ({ titleData }) => {
 	)
 }
 
-TitleLogement.prototype = {
-	titleData: PropTypes.shape({
-		title: PropTypes.string,
-		location: PropTypes.string,
-	}),
-}
+TitleLogement.propTypes = {
+  titleData: PropTypes.shape({
+    title: PropTypes.string,
+    location: PropTypes.string,
+  }),
+};
 
 export default TitleLogement

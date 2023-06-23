@@ -12,11 +12,10 @@ const Logement = () => {
 	const parmId = params.id
 
 	const appart = logements.find((app) => app.id === parmId)
-	console.log(appart)
 
 	const RenderTags = () => {
 		return (appart?.tags|| []).map((tag, indx) => {
-			return <Tag text={tag} key={indx}/>
+			return <Tag text={tag} key={`tag-${indx}-${tag}-${appart?.id}`} />;
 		})
 	}
 
@@ -26,11 +25,15 @@ const Logement = () => {
 		return (
 			<div className={styles.stars}>
 				{stars.map((star, indx) => {
-					if (star <= Number(appart.rating)) {
-						return <FaStar key={indx} style={{ color: '#FF6060' }} />
-					} else {
-						return <FaStar key={indx} style={{ color: '#E3E3E3' }} />
-					}
+					if(!appart?.rating) return null
+					return (
+            <FaStar
+              key={`star-${indx}-${appart.id}`}
+              style={{
+                color: star <= Number(appart.rating) ? "#FF6060" : "#E3E3E3",
+              }}
+            />
+          );
 				})}
 			</div>
 		)
@@ -56,7 +59,7 @@ const Logement = () => {
 				</div>
 				<div className={styles['tags-stars-container']}>
 					<div className={styles.host_container}>
-						<h3>{appart.host.name.split(' ').map(t => (<div>{t}</div>))} </h3>
+						<h3>{appart.host.name.split(' ').map((t, index) => (<div key={`${index}-host-container`}>{t}</div>))} </h3>
 						<img src={appart.host.picture} alt={appart.host.name} />
 					</div>
 					<div>

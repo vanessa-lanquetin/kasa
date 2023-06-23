@@ -1,5 +1,6 @@
-import styles from './Card.module.scss'
-import { PropTypes } from 'prop-types'
+import styles from "./Card.module.scss";
+import PropTypes from 'prop-types';
+import React from "react";
 
 const Card = ({ imageUrl, cardTitle }) => {
 	return (
@@ -10,9 +11,9 @@ const Card = ({ imageUrl, cardTitle }) => {
 	)
 }
 
-Card.protoType = {
-	imageUrl: PropTypes.string,
-	cardTitle: PropTypes.string,
-}
+Card.propTypes = {
+  imageUrl: PropTypes.string,
+  cardTitle: PropTypes.string,
+};
 
 export default Card

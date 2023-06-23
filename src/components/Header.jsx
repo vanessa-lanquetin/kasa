@@ -4,7 +4,7 @@ import styles from './Header.module.scss'
 import React from "react";
 import { Link } from 'react-router-dom'
 
-const Header = (props) => {
+const Header = () => {
 	return (
 		<header className={styles.header}>
 			<nav className={styles.header__nav}>

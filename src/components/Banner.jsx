@@ -1,4 +1,5 @@
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 import style from './Banner.module.scss'
 
 const Banner = ({ title, imageUrl, maxHeight }) => {

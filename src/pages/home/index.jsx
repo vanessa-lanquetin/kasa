@@ -8,21 +8,23 @@ import React from "react";
 
 const index = () => {
 	return (
-		<div className={styles.container}>
-			<Banner imageUrl={imgBanner} title="Chez vous, partout et ailleurs" />
-			<div className={styles.card_container}>
-				{mockData.map((logement, indx) => (
-					<Link to={`/logement/${logement.id}`}>
-						<Card
-							imageUrl={logement.cover}
-							cardTitle={logement.title}
-							key={indx}
-						/>
-					</Link>
-				))}
-			</div>
-		</div>
-	)
+    <div className={styles.container}>
+      <Banner imageUrl={imgBanner} title="Chez vous, partout et ailleurs" />
+      <div className={styles.card_container}>
+        {mockData.map((logement, indx) => (
+          <Link
+            to={`/logement/${logement.id}`}
+            key={`${logement.id}-${indx}-cardlink`}
+          >
+            <Card
+              imageUrl={logement.cover}
+              cardTitle={logement.title}
+            />
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default index

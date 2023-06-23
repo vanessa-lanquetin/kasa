@@ -6,8 +6,8 @@ const Tag = ({ text }) => {
 	return <div className={styles.tag}>{text}</div>
 }
 
-Tag.prototype = {
-	text: PropTypes.string,
-}
+Tag.propTypes = {
+  text: PropTypes.string,
+};
 
 export default Tag
