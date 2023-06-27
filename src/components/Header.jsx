@@ -1,27 +1,38 @@
-// import PropTypes from 'prop-types'
-import logo from '../assets/logo-kasa.png'
-import styles from './Header.module.scss'
 import React from "react";
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from "react-router-dom";
+import logo from "../assets/logo-kasa.png";
+import styles from "./Header.module.scss";
 
 const Header = () => {
-	return (
+  const location = useLocation();
+
+  return (
     <header className={styles.header}>
       <nav className={styles.header__nav}>
         <Link to="/">
-					<img src={logo} alt="logo Kasa" />
-				</Link>
+          <img src={logo} alt="logo Kasa" />
+        </Link>
         <ul>
           <li>
-            <Link to="/">Accueil</Link>
+            <Link
+              to="/"
+              className={location.pathname === "/" ? styles.active : ""}
+            >
+              Accueil
+            </Link>
           </li>
           <li>
-            <Link to="/about">A Propos</Link>
+            <Link
+              to="/about"
+              className={location.pathname === "/about" ? styles.active : ""}
+            >
+              A Propos
+            </Link>
           </li>
         </ul>
       </nav>
     </header>
   );
-}
+};
 
-export default Header
+export default Header;

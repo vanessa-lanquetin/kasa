@@ -8,7 +8,7 @@ import styles from "./index.module.scss";
 const index = () => {
   return (
     <div className={`about ${styles.about}`}>
-      <Banner imageUrl={aboutImg} maxHeight="223px" />
+      <Banner className={`banner ${styles.banner}`} imageUrl={aboutImg} />
       <div className={`collapse ${styles.collapse}`}>
         <div className="collapse__dropdown">
           {CollapseData.map((item) => {

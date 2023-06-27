@@ -9,11 +9,7 @@
 	align-items: center;
 	border-radius: $border-rd;
 	position: relative;
-	max-height: 111px;
-
-	@include responsive(768px) {
-		max-height: 223px;
-	}
+	max-height: 223px;
 
 	&:before {
 		content: '';
@@ -44,6 +40,9 @@
 		}
 	}
 	img {
-		min-width: 710px;
+
+		@include responsive(768px){
+			min-width: 710px;
+		}
 	}
 }

@@ -12,9 +12,10 @@ const Banner = ({ title, imageUrl, maxHeight }) => {
 }
 
 Banner.propTypes = {
-	imageUrl: PropTypes.string,
-	title: PropTypes.string,
-	maxHeight: PropTypes.string,
-}
+  className: PropTypes.string,
+  imageUrl: PropTypes.string,
+  title: PropTypes.string,
+  maxHeight: PropTypes.string,
+};
 
 export default Banner

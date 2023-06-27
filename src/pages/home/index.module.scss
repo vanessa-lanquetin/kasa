@@ -1,7 +1,7 @@
-@import '../../styles/variables';
-@import '../../styles/mixins';
+@import "../../styles/variables";
+@import "../../styles/mixins";
 
-main{
+main {
 	margin-bottom: 50px;
 }
 
@@ -17,14 +17,17 @@ main{
 	}
 
 	.card_container {
-		padding: 60px 0;
 		width: 100%;
 		margin: auto;
-		background-color: #f6f6f6;
 		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;
 		border-radius: 25px;
-		gap: 60px;
+		gap: 20px;
+		@include responsive(768px) {
+			background-color: #f6f6f6;
+			gap: 60px;
+			padding: 60px 0;
+		}
 	}
 }

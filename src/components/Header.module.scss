@@ -2,12 +2,26 @@
 @import '../styles/mixins';
 
 .header {
+	&__nav li {
+		color: $primary-clr;
+		border-bottom: 2px solid transparent; /* Ajout de la bordure transparente par défaut */
+		transition: border-color 0.3s; /* Ajout d'une transition pour une animation fluide */
+		}
+
+
+	&__nav li.active {
+		border-color: $primary-clr; /* Changement de la couleur de la bordure lorsque l'élément est actif */
+	}
+}
+
+
+.header {
 	&__nav {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		padding: 20px 0;
-		font-size: 0.8em;
+		font-size: 0.7em;
 		
 		@include responsive(768px) {
 			font-size: 1.1em;
