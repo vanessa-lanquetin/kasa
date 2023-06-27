@@ -24,7 +24,7 @@ main {
 		flex-wrap: wrap;
 		border-radius: 25px;
 		gap: 20px;
-		@include responsive(768px) {
+		@include responsive(840px) {
 			background-color: #f6f6f6;
 			gap: 60px;
 			padding: 60px 0;
