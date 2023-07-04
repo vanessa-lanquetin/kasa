@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../assets/logo-kasa.png";
+import logo from "../../assets/img/logo-kasa.png";
 import styles from "./Header.module.scss";
 
 const Header = () => {

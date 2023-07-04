@@ -1,13 +1,28 @@
 import React from "react";
 import { useParams, Navigate } from "react-router-dom";
 import logements from "../../data/mockData.json";
-import Carrousel from "../../components/Carrousel";
-import TitleLogement from "../../components/TitleLogement";
-import Tag from "../../components/Tag";
+import Carrousel from "../../components/carrousel/Carrousel";
+import Tag from "../../components/tags/Tag";
 import { FaStar } from "react-icons/fa";
-import Collapse from "../../components/Collapse";
+import Collapse from "../../components/collapse/Collapse";
 import styles from "./index.module.scss";
+import PropTypes from "prop-types";
 
+const TitleLogement = ({ titleData }) => {
+  return (
+    <>
+      <h2 className={styles.title}>{titleData.title}</h2>
+      <p className={styles.location}>{titleData.location}</p>
+    </>
+  );
+};
+
+TitleLogement.propTypes = {
+  titleData: PropTypes.shape({
+    title: PropTypes.string,
+    location: PropTypes.string,
+  }),
+};
 const Logement = () => {
   // Récupération des paramètres de l'URL
   const params = useParams();
@@ -16,6 +31,7 @@ const Logement = () => {
   // Recherche du logement correspondant à l'ID dans les données
   const appart = logements.find((app) => app.id === parmId);
 
+  
   // Fonction pour rendre les tags du logement
   const RenderTags = () => {
     return (appart?.tags || []).map((tag, indx) => {
@@ -85,7 +101,7 @@ const Logement = () => {
           </div>
         </div>
       </div>
-      <div className={styles.descriptionContainer}>
+      <div className={`${styles.descriptionContainer} ${styles.container}`}>
         <div className={styles.descriptionContent}>
           <div className="description-content__description">
             <Collapse title="Description" content={appart.description} />

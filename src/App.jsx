@@ -12,8 +12,10 @@ import About from './pages/about'
 import NotFound from './pages/404'
 
 // components
-import Header from './components/Header'
-import Footer from './components/Footer'
+/* import Header from "./components/Header";
+import Footer from "./components/Footer"; */
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 import Logement from './pages/logement'
 
 //import RootLayout from './layouts/RootLayout.jsx'

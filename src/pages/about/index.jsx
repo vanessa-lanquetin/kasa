@@ -1,7 +1,7 @@
-import Banner from "../../components/Banner";
-import aboutImg from "../../assets/img-about.jpg";
+import Banner from "../../components/banner/Banner";
+import aboutImg from "../../assets/img/img-about.jpg";
 import React from "react";
-import Collapse from "../../components/Collapse";
+import Collapse from "../../components/collapse/Collapse";
 import CollapseData from "../../data/collapses.json";
 import styles from "./index.module.scss";
 

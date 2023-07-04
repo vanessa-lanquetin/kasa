@@ -1,7 +1,7 @@
 import styles from './index.module.scss'
-import Banner from '../../components/Banner'
-import imgBanner from '../../assets/banner-kasa.jpg'
-import Card from '../../components/Card'
+import Banner from '../../components/banner/Banner'
+import imgBanner from '../../assets/img/banner-kasa.jpg'
+import Card from '../../components/card/Card'
 import mockData from '../../data/mockData.json'
 import { Link } from 'react-router-dom'
 import React from "react";
