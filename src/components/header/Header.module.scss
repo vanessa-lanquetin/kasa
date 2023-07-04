@@ -6,6 +6,10 @@
 		color: $primary-clr;
 		border-bottom: 2px solid transparent; /* Ajout de la bordure transparente par défaut */
 		transition: border-color 0.3s; /* Ajout d'une transition pour une animation fluide */
+			&:hover{
+		transform: scale(1.06);
+		transition: transform 300ms;
+	}
 		}
 
 

@@ -14,7 +14,11 @@
 	@include responsive(768px) {
 		width: 335px;
 	}
-
+	&:hover{
+		transform: scale(1.02);
+		transition: transform 300ms;
+		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	}
 	&::after {
 		content: "";
 		width: 100%;
