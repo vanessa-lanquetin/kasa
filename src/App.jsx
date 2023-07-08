@@ -10,16 +10,14 @@ import React from "react";
 import Home from './pages/home'
 import About from './pages/about'
 import NotFound from './pages/404'
+import Logement from "./pages/logement";
 
 // components
-/* import Header from "./components/Header";
-import Footer from "./components/Footer"; */
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
-import Logement from './pages/logement'
 
-//import RootLayout from './layouts/RootLayout.jsx'
-// USE LAYOUT AS A FC function to return the HTML for the page to be rendered in
+
+
 const Layout = () => {
 	return (
 		<div className="container_general">
