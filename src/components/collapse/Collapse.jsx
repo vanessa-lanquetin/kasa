@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./Collapse.module.scss";
-
 import styles from "./Collapse.module.scss";
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
+//Ce composant va afficher des collaspe avec un titre et une description 
 function Dropdown({title, content}) {
   // Utilisation du hook d'état pour gérer l'état "ouvert" du dropdown
   //Le hook d'état permet déclarer une variable d'état et une fonction pour la mettre à jour. Lorsque la valeur de l'état change,   

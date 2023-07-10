@@ -8,14 +8,18 @@ import styles from "./index.module.scss"; // Importation des styles spécifiques
 const index = () => {
   return (
     <div className={`about ${styles.about}`}>
-      <Banner className={`banner ${styles.banner}`} imageUrl={aboutImg} />{" "}
+      <Banner
+        className={`banner ${styles.banner}`}
+        imageUrl={aboutImg}
+        maxHeight="223px"
+      />
       {/* Affichage de la bannière avec le composant Banner */}
       <div className={`collapse ${styles.collapse}`}>
         <div className="collapse__dropdown">
           {CollapseData.map((item) => {
             return (
               <div key={item.id}>
-                <Collapse content={item.content} title={item.title} />{" "}
+                <Collapse content={item.content} title={item.title} />
                 {/* Affichage du collapse avec le contenu et le titre fournis */}
               </div>
             );

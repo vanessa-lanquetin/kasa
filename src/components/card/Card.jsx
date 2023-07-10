@@ -2,6 +2,7 @@ import styles from "./Card.module.scss";
 import PropTypes from "prop-types";
 import React from "react";
 
+//Le composant card sera utiliser pour afficher les différents logements sur la page home.  Il affichera l'image et le titre correspond au logement 
 const Card = ({ imageUrl, cardTitle }) => {
   // Déclare le composant `Card` en utilisant une fonction fléchée et en déstructurant les props
 
@@ -14,8 +15,8 @@ const Card = ({ imageUrl, cardTitle }) => {
 };
 
 Card.propTypes = {
-  imageUrl: PropTypes.string, // Propriété `imageUrl` de type string
-  cardTitle: PropTypes.string, // Propriété `cardTitle` de type string
+  imageUrl: PropTypes.string,
+  cardTitle: PropTypes.string,
 };
 
-export default Card; // Exporte le composant `Card` par défaut
+export default Card; // Exporte le composant `Card`

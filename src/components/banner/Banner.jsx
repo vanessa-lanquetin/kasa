@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import style from "./Banner.module.scss";
 
-const Banner = ({ title, imageUrl }) => {
-  // Déclare le composant `Banner` en utilisant une fonction fléchée et en déstructurant les props
 
+//Banner sert à afficxher une bannière, le composant affichera un titre avec title et une image avec imageUrl
+const Banner = ({ className, title, imageUrl }) => {
   return (
-    <section className={style.banner}>
+    <section className={`${className ? `${className} ` : ""}${style.banner}`}>
       {/* Affiche le titre uniquement si `title` est défini */}
       {title ? <h2 className={style.banner__title}>{title}</h2> : ""}
       <img src={imageUrl} alt={title} />
@@ -14,10 +14,12 @@ const Banner = ({ title, imageUrl }) => {
   );
 };
 
+
 Banner.propTypes = {
-  className: PropTypes.string, // Propriété `className` de type string
-  imageUrl: PropTypes.string, // Propriété `imageUrl` de type string
-  title: PropTypes.string, // Propriété `title` de type string
+  className: PropTypes.string,
+  imageUrl: PropTypes.string,
+  title: PropTypes.string,
+  maxHeight: PropTypes.string,
 };
 
-export default Banner; // Exporte le composant `Banner` par défaut
+export default Banner; // Exporte le composant `Banner`

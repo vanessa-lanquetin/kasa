@@ -11,6 +11,6 @@ Kasa me recrute en tant que développeuse front-end en freelance pour développe
 Démarrer le projet React et développer l’ensemble de l’application, les composants React, les routes React Router
 
 
-## lancer le projet
+## Lancer le projet
 Avec `npm start`
 

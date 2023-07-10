@@ -4,19 +4,24 @@ import styles from "./Carrousel.module.scss";
 import { useState } from "react";
 import Arrow from "./Arrow";
 
+/* 
+Ce composant  carrousel utilise le hook useState de React pour gérer l'état de l'index de l'image actuellement affichée. 
+Lorsque l'utilisateur clique sur lesflèches , la fonction handleClick est appelée pour mettre à jour l'index de l'image en fonction de la direction. */
 const Carrousel = ({ pictures }) => {
-  // Déclare une variable d'état `imgIndx` avec une valeur initiale de 0
+  //On utilise le hook useState de React pour gérer l'état de l'index de l'image, on déclare `imgIndx` avec une valeur initiale de 0
   let [imgIndx, setImgIndx] = useState(0);
 
   // Fonction de gestion du clic sur les flèches du carrousel
   const handleClick = (direction) => {
     if (direction === "right") {
-      // Vérifie si l'index actuel est inférieur à l'index maximum
+      // On vérifie si on est à la fin du tableau pour savoir si on affiche l'image suivante ou si on retourne à la première image du tableau
+      //Est-ce que l'index actuel est inférieur à l'index maximum
       if (pictures.length - 1 > imgIndx) {
-        // Augmente l'index actuel de 1
+        // Si oui Augmente l'index actuel de 1 pour afficher l'image suivante
         setImgIndx((imgIndx) => imgIndx + 1);
       } else {
-        // Sinon, retourne à l'index 0 (début du carrousel)
+        // Quand on arrive à la fin du tableau d'images
+        // Retourne à la première image en mettant l'index à 0
         setImgIndx(0);
       }
     }
@@ -38,8 +43,7 @@ const Carrousel = ({ pictures }) => {
       {/*Affiche la flèche de gauche si le carrousel contient qu'une image
         // "&&" pour effectuer une évaluation conditionnelle.
         // Si la condition "pictures.length > 1" est vraie, les éléments suivants seront affichés.
-        // Sinon, si la condition est fausse, ces éléments seront ignorés et non affichés.*/
-      }
+        // Sinon, si la condition est fausse, ces éléments seront ignorés et non affichés.*/}
       {pictures.length > 1 && (
         <button className={styles.btn} onClick={() => handleClick("left")}>
           <Arrow clr="white" />

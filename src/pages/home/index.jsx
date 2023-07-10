@@ -9,17 +9,18 @@ import React from "react";
 const index = () => {
 	return (
     <div className={styles.container}>
-      <Banner imageUrl={imgBanner} title="Chez vous, partout et ailleurs" />
+      <Banner
+        className={styles.home}
+        imageUrl={imgBanner}
+        title="Chez vous, partout et ailleurs"
+      />
       <div className={styles.card_container}>
         {mockData.map((logement, indx) => (
           <Link
             to={`/logement/${logement.id}`}
             key={`${logement.id}-${indx}-cardlink`}
           >
-            <Card
-              imageUrl={logement.cover}
-              cardTitle={logement.title}
-            />
+            <Card imageUrl={logement.cover} cardTitle={logement.title} />
           </Link>
         ))}
       </div>

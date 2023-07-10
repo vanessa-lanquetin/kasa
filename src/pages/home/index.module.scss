@@ -1,6 +1,14 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
+//Ici je gère la hateur de la bannière
+.home {
+	max-height: 120px !important;
+	@include responsive(768px) {
+		max-height: 223px !important;
+	}
+}
+
 main {
 	margin-bottom: 50px;
 }
