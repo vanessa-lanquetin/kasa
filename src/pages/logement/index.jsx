@@ -6,24 +6,6 @@ import Tag from "../../components/tags/Tag";
 import { FaStar } from "react-icons/fa";
 import Collapse from "../../components/collapse/Collapse";
 import styles from "./index.module.scss";
-import PropTypes from "prop-types";
-
-//Title Logement
-const TitleLogement = ({ titleData }) => {
-  return (
-    <>
-      <h2 className={styles.title}>{titleData.title}</h2>
-      <p className={styles.location}>{titleData.location}</p>
-    </>
-  );
-};
-
-TitleLogement.propTypes = {
-  titleData: PropTypes.shape({
-    title: PropTypes.string,
-    location: PropTypes.string,
-  }),
-};
 
 const Logement = () => {
   // Récupération des paramètres de l'URL
@@ -32,7 +14,6 @@ const Logement = () => {
 
   // Recherche du logement correspondant à l'ID dans les données
   const appart = logements.find((app) => app.id === parmId);
-
 
   // Affichage des tags
   const RenderTags = () => {
@@ -68,28 +49,37 @@ const Logement = () => {
   };
 
   // Fonction pour afficher la liste des équipements dans le collapse
-const renderEquipments = () => {
-  // Affiche les équipements de l'appartement
-  return appart?.equipments.map((equipment, index) => (
-    // Pour chaque équipement dans les équipements de l'appartement, crée un élément <div>
-    // La clé unique est générée en utilisant l'index de l'équipement
-    <div key={`equipment-${index}`}>{equipment}</div>
-  ));
-};
+  const renderEquipments = () => {
+    // Affiche les équipements de l'appartement
+    return appart?.equipments.map((equipment, index) => (
+      // Pour chaque équipement dans les équipements de l'appartement, crée un élément <div>
+      // La clé unique est générée en utilisant l'index de l'équipement
+      <div key={`equipment-${index}`}>{equipment}</div>
+    ));
+  };
 
+  //Title Logement
+  const TitleLogement = ({ titleData }) => {
+    return (
+      <>
+        <h2 className={styles.title}>{titleData.title}</h2>
+        <p className={styles.location}>{titleData.location}</p>
+      </>
+    );
+  };
 
   //Si tu ne trouves pas de logement, redirgie vers la page 404
   return !appart ? (
     <Navigate to="/404" replace={true} />
   ) : (
-        // Si tu trovues un logement, affiche les détails du logement
+    // Si tu trovues un logement, affiche les détails du logement
     <div>
       {/*Carrousel */}
       <Carrousel pictures={appart.pictures} />
 
       {/* Informations sur le logement */}
       <div className={styles.appart_container}>
-        {/* Titre,Localisation et tags du logements */}
+        {/* Titre,Localisation et tags du logement */}
         <div className={styles.header}>
           <TitleLogement
             titleData={{

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import style from "./Banner.module.scss";
 
 
-//Banner sert à afficxher une bannière, le composant affichera un titre avec title et une image avec imageUrl
+//Banner sert à afficher une bannière, le composant affichera un titre avec title et une image avec imageUrl
 const Banner = ({ className, title, imageUrl }) => {
   return (
     <section className={`${className ? `${className} ` : ""}${style.banner}`}>

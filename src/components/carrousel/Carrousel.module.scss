@@ -34,7 +34,7 @@
 	}
 
 	.btn:last-child {
-		right: $paddin-msg;
+		right: 0px;
 		left: auto;
 		transform: scale(-1);
 		@include responsive(768px) {
